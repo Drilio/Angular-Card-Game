@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import {NgOptimizedImage} from "@angular/common";
 import {LoginModule} from "./login-module/login/login.module";
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TopBarComponent
+    TopBarComponent,
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
