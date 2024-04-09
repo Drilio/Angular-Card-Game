@@ -1,4 +1,4 @@
-# MyDigitalSchool-CardGame
+# CardGame
 Apprendre un Framework JS : Angular (B3 Developeur Web)
 
 ## Introduction
@@ -93,3 +93,7 @@ Outre le fait de savoir utiliser correctement les composants de base Angular, il
 *Notes :* 
 - 2 points bonus seront attribués sur l'effort apporté au graphisme
 - Les documents d'analyse et de conception peuvent être des scans de documents papier, fourni avec le projet lui-même
+
+# Figma 
+
+https://www.figma.com/file/GyD32FclxU1LjITLSEaXXK/Untitled?type=design&node-id=0-1&mode=design&t=UZZ9MyHHwg5sLrgN-0
