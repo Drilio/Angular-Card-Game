@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {IUser} from "../interfaces/IUser";
-import {Observable} from "rxjs";
+import {UserWebServices} from '../web-services/user-web-services'
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +11,13 @@ export class UserService {
     password:"",
   };
 
+  login(user:IUser){
+    return this.UserWebService.login(user)
+  }
+
   CreateUser(user: IUser) {
     //TODO: WebService Implementation;
+    return this.UserWebService.createUser(user)
   }
 
   GetUser(){
@@ -20,7 +25,7 @@ export class UserService {
   }
 
 
-  constructor() {
+  constructor(private UserWebService: UserWebServices) {
 
   }
 }

@@ -10,7 +10,7 @@ import {UserService} from "../../services/user.service";
 
 export class SignUpFormComponent {
 
-  checkoutForm:FormGroup = this._formBuilder.group({
+  signUpForm:FormGroup = this._formBuilder.group({
     login:"",
     password:"",
   })
@@ -22,7 +22,7 @@ export class SignUpFormComponent {
   }
 
   onSubmit( ){
-    console.warn('Your account was created successfully.', this.checkoutForm.value);
-    this.checkoutForm.reset();
+    console.warn('Your account was created successfully.', this.signUpForm.value);
+    return this._userService.CreateUser(this.signUpForm.value);
   }
 }
