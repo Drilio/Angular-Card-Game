@@ -8,6 +8,8 @@ import {NgOptimizedImage} from "@angular/common";
 import {LoginModule} from "./login-module/login/login.module";
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { ReactiveFormsModule} from "@angular/forms";
+import {SignUpModule} from "./sign-up-module/sign-up/sign-up.module";
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     NgOptimizedImage,
     LoginModule,
+    SignUpModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
