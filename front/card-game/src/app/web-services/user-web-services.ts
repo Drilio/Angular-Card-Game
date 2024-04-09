@@ -14,7 +14,7 @@ export class UserWebServices {
         headers:{
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({user}),
+        body: JSON.stringify(user),
       });
     } catch (error) {
       console.log('error', error);
@@ -22,18 +22,20 @@ export class UserWebServices {
   }
 
   async login(user: IUser) {
-    console.log("toto")
+    console.log("user",JSON.stringify({user}))
     try{
-      const reponse = await fetch("http://localhost:3010/api/login",{
+      const response = await fetch("http://localhost:3010/api/login",{
         method: "POST",
         headers:{
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({user}),
+        body: JSON.stringify(user),
       })
-      console.log('reponse',reponse)
+      console.log('reponse',response)
+      return response.ok;
     }catch(error){
       console.log('error',error);
+      return false;
     }
   }
 }

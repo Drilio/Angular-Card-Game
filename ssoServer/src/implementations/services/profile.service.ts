@@ -26,9 +26,12 @@ export class ProfileService implements IProfileService {
     }
 
     async login(login: string, password: string): Promise<string> {
+         console.log('ENTER LOGIN')
+        console.log('login',login)
         const profiles: ProfileModel[] = await this.profileDal.findAll();
-
+        console.log('profiles',profiles)
         const foundProfile: ProfileModel | undefined = profiles.find((profile: ProfileModel) => profile.login === login);
+        console.log('foundProfile',foundProfile)
         if (!foundProfile) {
             throw new Error('Login not found');
         }

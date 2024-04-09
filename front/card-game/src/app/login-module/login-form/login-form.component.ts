@@ -22,7 +22,8 @@ export class LoginFormComponent {
 
   onSubmit( ){
     console.warn('Your account was created successfully.', this.loginForm.value);
-    return this._userService.login(this.loginForm.value);
+    this._userService.login(this.loginForm.value);
+
   }
 
 }

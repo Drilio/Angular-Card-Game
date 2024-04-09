@@ -12,11 +12,11 @@ export class UserService {
   };
 
   login(user:IUser){
+console.log(user)
     return this.UserWebService.login(user)
   }
 
   CreateUser(user: IUser) {
-    //TODO: WebService Implementation;
     return this.UserWebService.createUser(user)
   }
 
