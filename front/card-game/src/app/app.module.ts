@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import {NgOptimizedImage} from "@angular/common";
+import {LoginModule} from "./login-module/login/login.module";
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import { TopBarComponent } from './top-bar/top-bar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgOptimizedImage,
+    LoginModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
