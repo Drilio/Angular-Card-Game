@@ -12,9 +12,13 @@ export class DisplayCardsComponent implements OnInit{
 
   async ngOnInit() {
     this.cards = await this._cardService.GetAllCard()
-    console.log(this.cards);
+    this._cardService.allCards$.subscribe(cards =>this.cards = cards)
   }
 
+  async DeleteCard(id:string){
+    const deleteObject =this._cardService.DeleteCard(id);
+    return console.log(deleteObject);
+  }
 
   constructor(private _cardService: CardService) {
   }

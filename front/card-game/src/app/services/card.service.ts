@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {CardWebService} from "../web-services/card-web-service";
 import {ICard} from "../interfaces/ICard";
+import {BehaviorSubject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,8 @@ import {ICard} from "../interfaces/ICard";
 export class CardService {
 
   allCards:ICard[]=[];
+  //This Observable is here for display correct data on creation and delete
+  allCards$ = new BehaviorSubject(this.allCards);
 
   async GetAllCard() {
     const Cards = await this._cardWebService.GetAllCards()
@@ -27,6 +30,7 @@ export class CardService {
   }
 
   DeleteCard(id:string){
+    this.allCards = this.allCards.filter(card => card.id !== id);
     return this._cardWebService.DeleteCard(id);
   }
 

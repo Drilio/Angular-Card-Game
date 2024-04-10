@@ -48,7 +48,7 @@ export class CardWebService {
       const response = await fetch(`http://localhost:3000/api/cards/${id}`,{
         method: "DELETE",
       })
-      console.log(response.json())
+      console.log(response)
     }catch(error){
       console.log('error',error);
     }

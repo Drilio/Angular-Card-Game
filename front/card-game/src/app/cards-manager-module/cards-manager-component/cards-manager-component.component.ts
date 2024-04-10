@@ -12,6 +12,7 @@ export class CardsManagerComponentComponent implements OnInit {
   card:ICard ={
     name:"",
     value:0,
+    id:undefined,
   }
   createCardForm: FormGroup = this._formBuilder.group({
     name: new FormControl(''),
