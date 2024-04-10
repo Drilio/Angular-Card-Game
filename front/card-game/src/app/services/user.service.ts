@@ -7,34 +7,26 @@ import {BehaviorSubject} from "rxjs";
   providedIn: 'root'
 })
 export class UserService {
-  User:IUser={
-    login:"",
-    password:"",
-  };
 
   isLoggedIn:boolean=false;
 
   isLoggedIn$ = new BehaviorSubject(this.isLoggedIn);
 
   async login(user: IUser) {
-    this.isLoggedIn= await this.UserWebService.login(user)
+    this.isLoggedIn= await this._userWebService.login(user)
     return this.isLoggedIn;
   }
 
   CreateUser(user: IUser) {
-    return this.UserWebService.createUser(user)
+    return this._userWebService.createUser(user)
   }
 
   DisconnectUser() {
     this.isLoggedIn = false;
   }
 
-  GetUser(){
-    return this.User;
+
+  constructor(private _userWebService: UserWebServices) {
   }
 
-
-  constructor(private UserWebService: UserWebServices) {
-
-  }
 }

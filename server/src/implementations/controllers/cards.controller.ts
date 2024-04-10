@@ -16,6 +16,7 @@ export class CardsController {
             console.log('[GET] /api/cards');
             const values: CardBasicModel[] = await this.cardsService.findAllBasic();
             res.status(200).send(values);
+            console.log(values)
         } catch (error: any) {
             console.error('Error : ', error);
             res.status(500).send({ message: error.message });

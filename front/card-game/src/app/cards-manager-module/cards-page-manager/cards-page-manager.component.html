@@ -1,1 +1,14 @@
-<p>cards-page-manager works!</p>
+<h1> Welcome to your vault ! Here you can Manage your Decks and card</h1>
+<div>
+<button (click)="toggleDecksManager()" *ngIf="!isDecksManagerOpen">Open Decks Manager</button>
+<button (click)="toggleDecksManager()" *ngIf="isDecksManagerOpen"> Close Decks Manager</button>
+<button *ngIf="!isCardsManagerOpen" (click)="toggleCardsManager()"> Open Cards Manager</button>
+<button *ngIf="isCardsManagerOpen" (click)="toggleCardsManager()"> Close Cards Manager</button>
+</div>
+<div *ngIf="isCardsManagerOpen">
+  <app-display-cards></app-display-cards>
+  <app-cards-manager-component></app-cards-manager-component>
+</div>
+<div *ngIf="isDecksManagerOpen">
+  decksManagerPlaceHolder
+</div>

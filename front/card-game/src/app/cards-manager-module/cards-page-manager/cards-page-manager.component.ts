@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class CardsPageManagerComponent {
 
+  isCardsManagerOpen = false;
+  isDecksManagerOpen = false;
+
+  toggleCardsManager() {
+    this.isDecksManagerOpen = false
+    this.isCardsManagerOpen = !this.isCardsManagerOpen;
+
+  }
+  toggleDecksManager() {
+    this.isCardsManagerOpen = false
+    this.isDecksManagerOpen = !this.isDecksManagerOpen;
+  }
+
 }

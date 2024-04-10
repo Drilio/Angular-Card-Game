@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule} from "@angular/forms";
 import {SignUpModule} from "./sign-up-module/sign-up/sign-up.module";
 import {HomePageModule} from "./home-module/home-page/home-page.module";
+import {CardsManagerModule} from "./cards-manager-module/cards-manager/cards-manager.module";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {HomePageModule} from "./home-module/home-page/home-page.module";
     SignUpModule,
     ReactiveFormsModule,
     HomePageModule,
+    CardsManagerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
