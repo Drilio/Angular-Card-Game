@@ -4,6 +4,7 @@ import {HomeComponent} from "../home/home.component";
 import { CarouselComponent } from '../carousel/carousel.component';
 import { DisplayDataComponent } from '../display-data/display-data.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {RouterLink} from "@angular/router";
 
 
 
@@ -16,6 +17,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
   imports: [
     CommonModule,
     BrowserAnimationsModule,
+    RouterLink,
   ],
   exports:[
     HomeComponent,
