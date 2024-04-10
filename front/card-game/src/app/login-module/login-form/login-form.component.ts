@@ -60,6 +60,9 @@ export class LoginFormComponent implements OnInit{
   get f(): { [key: string]: AbstractControl } {
     return this.loginForm.controls;
   }
+  UpdateUserConnexion(){
+    this._userService.isLoggedIn$.next(this._userService.isLoggedIn);
+  }
 
   async onSubmit() {
     this.user.login = this.loginForm.value.login;
@@ -73,6 +76,7 @@ export class LoginFormComponent implements OnInit{
 
     const connection = await this._userService.login(this.user);
     if (connection) {
+      this.UpdateUserConnexion();
       await this._router.navigateByUrl(this.homeUrl);
     }else{
       this.loginError = true;

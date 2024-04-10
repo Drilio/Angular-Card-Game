@@ -33,6 +33,7 @@ export class SignUpFormComponent implements OnInit {
   ) {
   }
 
+
   ngOnInit(): void {
     this.signUpForm = this._formBuilder.group(
       {
@@ -55,7 +56,7 @@ export class SignUpFormComponent implements OnInit {
       },
     );
   }
-
+  //Simplify data handle on html
   get f(): { [key: string]: AbstractControl } {
     return this.signUpForm.controls;
   }
@@ -74,6 +75,7 @@ export class SignUpFormComponent implements OnInit {
 
     console.warn('Your account was created successfully.', this.user);
     const connect = this._userService.CreateUser(this.user);
+
     return this._router.navigateByUrl(this.homeUrl);
 
   }

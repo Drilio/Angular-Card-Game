@@ -2,7 +2,7 @@
   <a routerLink="">
 <img ngSrc="assets/img/cardPlayer%201.png" alt="logo" class="logo" height="67" width="73">
   </a>
-<nav>
+<nav *ngIf="!isConnected">
   <ul>
     <li>
       <a routerLink="/login/">Login</a>
@@ -11,5 +11,8 @@
       <a routerLink="/sign-up/">Sign Up</a>
     </li>
   </ul>
+</nav>
+<nav *ngIf="isConnected">
+  <button (click)="disconnection()">Disconnection</button>
 </nav>
 </div>
