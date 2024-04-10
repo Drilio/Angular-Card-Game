@@ -42,4 +42,15 @@ export class CardWebService {
       console.log('error', error);
     }
   }
+
+  async DeleteCard(id:string){
+    try{
+      const response = await fetch(`http://localhost:3000/api/cards/${id}`,{
+        method: "DELETE",
+      })
+      console.log(response.json())
+    }catch(error){
+      console.log('error',error);
+    }
+  }
 }

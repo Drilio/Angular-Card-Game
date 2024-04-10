@@ -7,8 +7,14 @@ import {ICard} from "../interfaces/ICard";
 })
 export class CardService {
 
-  GetAllCard(){
-    return this._cardWebService.GetAllCards()
+  allCards:ICard[]=[];
+
+  async GetAllCard() {
+    const Cards = await this._cardWebService.GetAllCards()
+    for(let card of Cards){
+    this.allCards.push(card)
+    }
+    return this.allCards;
   }
 
   GetOneCard(id:string){
@@ -16,7 +22,12 @@ export class CardService {
   }
 
   CreateCard(card:ICard){
+    this.allCards.push(card);
     return this._cardWebService.createCard(card);
+  }
+
+  DeleteCard(id:string){
+    return this._cardWebService.DeleteCard(id);
   }
 
   constructor(private _cardWebService: CardWebService) { }

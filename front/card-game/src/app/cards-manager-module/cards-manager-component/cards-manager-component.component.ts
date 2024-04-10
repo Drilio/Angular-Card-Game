@@ -62,6 +62,7 @@ export class CardsManagerComponentComponent implements OnInit {
     }
 
     console.warn('Your card was created successfully.', this.card);
+    this.createCardForm.reset();
     return this._cardService.CreateCard(this.card);
   }
 }
