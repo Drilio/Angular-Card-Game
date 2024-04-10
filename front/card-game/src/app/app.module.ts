@@ -7,7 +7,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import {NgOptimizedImage} from "@angular/common";
 import {LoginModule} from "./login-module/login/login.module";
 import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './home-module/home/home.component';
 import { ReactiveFormsModule} from "@angular/forms";
 import {SignUpModule} from "./sign-up-module/sign-up/sign-up.module";
 
@@ -16,7 +16,6 @@ import {SignUpModule} from "./sign-up-module/sign-up/sign-up.module";
     AppComponent,
     TopBarComponent,
     FooterComponent,
-    HomeComponent
   ],
   imports: [
     BrowserModule,
