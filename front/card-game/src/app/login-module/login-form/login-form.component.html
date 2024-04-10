@@ -1,11 +1,31 @@
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <div class="form-section">
     <label >Login :</label>
-    <input type="text" formControlName="login">
+    <input
+      type="text"
+      formControlName="login"
+      [ngClass]="{ 'is-invalid': submitted && f['login'].errors }"
+    >
+    <div *ngIf="submitted && f['login'].errors" class="invalid-feedback">
+      <div *ngIf="f['login'].errors?.['required']">Login is required</div>
+    </div>
   </div>
   <div class="form-section">
     <label>Password : </label>
-    <input type="password" formControlName="password">
+    <input
+      type="password"
+      formControlName="password"
+      [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+    >
+    <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+      <div *ngIf="f['password'].errors?.['required']">Password is required</div>
+      <div *ngIf="f['password'].errors?.['minlength']">
+        Password must be at least 6 characters
+      </div>
+      <div *ngIf="f['password'].errors?.['maxlength']">
+        Username must not exceed 40 characters
+      </div>
+    </div>
   </div>
   <button class="button" type="submit"> Connexion</button>
 </form>
