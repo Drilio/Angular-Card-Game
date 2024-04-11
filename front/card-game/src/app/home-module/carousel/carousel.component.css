@@ -1,7 +1,7 @@
 :host {
-  flex: 1;
-  height: 100%;
   width: 100%;
+  max-width: 1200px;
+  height: 100%;
 }
 
 .carousel {
@@ -10,7 +10,9 @@
   width: 100%;
   overflow: hidden;
   border-radius: 0.5em;
+  max-width: 1200px;
 }
+
 
 .slide {
   position: absolute;
@@ -54,6 +56,7 @@
     left: 0;
   }
 }
+
 
 .arrow {
   display: block;
