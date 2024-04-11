@@ -1,0 +1,10 @@
+.background {
+  background-image: url('../assets/img/background.webp');
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}

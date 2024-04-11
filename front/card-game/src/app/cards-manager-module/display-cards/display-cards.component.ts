@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ICard} from "../../interfaces/ICard";
 import {CardService} from "../../services/card.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-display-cards',
@@ -17,10 +18,11 @@ export class DisplayCardsComponent implements OnInit{
 
   async DeleteCard(id:string){
     const deleteObject =this._cardService.DeleteCard(id);
-    return console.log(deleteObject);
+    await this._router.navigateByUrl('/');
+    console.log(deleteObject);
   }
 
-  constructor(private _cardService: CardService) {
+  constructor(private _cardService: CardService, private _router:Router) {
   }
 
 }
