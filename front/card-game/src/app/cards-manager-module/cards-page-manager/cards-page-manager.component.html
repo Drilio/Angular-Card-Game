@@ -1,14 +1,17 @@
+<div class="card-vault-container">
 <h1> Welcome to your vault ! Here you can Manage your Decks and card</h1>
-<div>
+<div class="button-card-manager-container">
 <button (click)="toggleDecksManager()" *ngIf="!isDecksManagerOpen">Open Decks Manager</button>
 <button (click)="toggleDecksManager()" *ngIf="isDecksManagerOpen"> Close Decks Manager</button>
 <button *ngIf="!isCardsManagerOpen" (click)="toggleCardsManager()"> Open Cards Manager</button>
 <button *ngIf="isCardsManagerOpen" (click)="toggleCardsManager()"> Close Cards Manager</button>
 </div>
-<div *ngIf="isCardsManagerOpen">
-  <app-display-cards></app-display-cards>
+<div *ngIf="isCardsManagerOpen" class="card-manager-container">
   <app-cards-manager-component></app-cards-manager-component>
+  <app-display-cards></app-display-cards>
 </div>
 <div *ngIf="isDecksManagerOpen">
   decksManagerPlaceHolder
+</div>
+
 </div>

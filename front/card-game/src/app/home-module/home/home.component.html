@@ -1,7 +1,15 @@
+<div class="home-main-container">
 <div class="carousel-container">
 <app-carousel></app-carousel>
 </div>
-<div *ngIf="isConnected">
-  <a>START GAME</a>
-  <a  routerLink="/cards-manager/">ACCESS YOUR VAULT</a>
+<div
+  *ngIf="isConnected"
+  class="display-data-button-container">
+  <button>
+    <a>START GAME</a>
+  </button>
+  <button>
+    <a  routerLink="/cards-manager/">ACCESS YOUR VAULT</a>
+  </button>
+</div>
 </div>

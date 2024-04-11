@@ -1,10 +1,16 @@
-<ng-container *ngFor="let card of cards; let i = index">
-  <div>
+<div class="cards-container">
+
+<ng-container *ngFor="let card of cards; let i = index" >
+  <div class="card-container">
+  <div class="card">
+    <img ngSrc="assets/img/battlecard.webp" height="1100" width="784">
     <p>{{card.name}}</p>
   </div>
   <div>
     <button (click)="DeleteCard(card.id!)">
-      <span class="material-symbols-outlined">delete</span>
+      delete
     </button>
   </div>
+  </div>
 </ng-container>
+</div>
