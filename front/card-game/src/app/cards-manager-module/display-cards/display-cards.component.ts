@@ -11,15 +11,19 @@ import {Router} from "@angular/router";
 export class DisplayCardsComponent implements OnInit{
   cards:ICard[]= [];
 
+  async getAllCards(){
+    return this.cards = await this._cardService.GetAllCard()
+
+  }
   async ngOnInit() {
-    this.cards = await this._cardService.GetAllCard()
+    await this.getAllCards()
     this._cardService.allCards$.subscribe(cards =>this.cards = cards)
   }
 
   async DeleteCard(id:string){
     const deleteObject =this._cardService.DeleteCard(id);
-    await this._router.navigateByUrl('/');
-    console.log(deleteObject);
+    return this.cards = await this.getAllCards();
+
   }
 
   constructor(private _cardService: CardService, private _router:Router) {
