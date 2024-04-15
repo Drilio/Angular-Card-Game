@@ -22,7 +22,6 @@ export class DisplayCardsComponent implements OnInit{
 
   async DeleteCard(id:string){
     const deleteObject =this._cardService.DeleteCard(id);
-    return this.cards = await this.getAllCards();
 
   }
 

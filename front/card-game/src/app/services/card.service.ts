@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {CardWebService} from "../web-services/card-web-service";
 import {ICard} from "../interfaces/ICard";
 import {BehaviorSubject} from "rxjs";
@@ -13,10 +13,8 @@ export class CardService {
   allCards$ = new BehaviorSubject(this.allCards);
 
   async GetAllCard() {
-    const Cards = await this._cardWebService.GetAllCards()
-    for(let card of Cards){
-    this.allCards.push(card)
-    }
+      this.allCards=await this._cardWebService.GetAllCards();
+    this.allCards$.next(this.allCards);
     return this.allCards;
   }
 
@@ -29,9 +27,11 @@ export class CardService {
     return this._cardWebService.createCard(card);
   }
 
-  DeleteCard(id:string){
+  async DeleteCard(id: string) {
+    await this._cardWebService.DeleteCard(id);
     this.allCards = this.allCards.filter(card => card.id !== id);
-    return this._cardWebService.DeleteCard(id);
+
+    return this.allCards$.next(this.allCards);
   }
 
   constructor(private _cardWebService: CardWebService) { }
